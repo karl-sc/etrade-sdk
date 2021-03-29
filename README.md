@@ -7,7 +7,8 @@ This class has been tested and is in use in my own personal python trading scrip
 In order to leverage this (and the REST API) you must have an API enabled Etrade account with both a 'consumer key' and a 'consumer secret'. When authenticating, the OAuth modules will attempt to authenticate and open a web browser window which you must follow to login. The SDK will then ask for a verification token. Simply paste this value back into the script to complete the interactive authentication.
 
 # Usage Examples
-## Basic usage Demonstrating how to authenticate interactively and get a listing of accounts
+
+## How to authenticate interactively and get a listing of accounts
 ```
 import etrade
 sdk = etrade.API()
@@ -21,8 +22,10 @@ accounts_list = sdk.accounts.list_accounts()
 # JSON Dump output of the accounts list
 sdk.jd(accounts_list)
 ```
-## Basic usage Demonstrating how to preset the consumer keys/secrets and get a stock quote for google
-```import etrade
+
+## How to preset the consumer keys/secrets and get a stock quote for google
+```
+import etrade
 sdk = etrade.API()
 sdk.attributes['consumer_key'] = '....aaabbbccc.....'
 sdk.attributes['consumer_secret'] =  '....fffeeeddd.....'
@@ -37,9 +40,11 @@ try:
 except:
   print("Error getting last trade price. RAW DATA:")
   sdk.jd(stock_quote) ## JSON Dump output of response
-  ```
-## Basic usage demonstrating how to iterate through all ALERTS on your account and print the ID and Detail
-```import etrade
+```
+  
+## How to iterate through all ALERTS on your account and print the ID and Detail
+```
+import etrade
 sdk = etrade.API()
 sdk.attributes['consumer_key'] = '....aaabbbccc.....'
 sdk.attributes['consumer_secret'] =  '....fffeeeddd.....'
@@ -54,3 +59,11 @@ try:
 except:
   print("Error retrieving alerts")
 ```
+
+# Other system dependancies
+This SDK makes heavy use of the following libraries:
+- xmltodict
+- rauth
+- webbrowser (for interactive authentication)
+- json
+
