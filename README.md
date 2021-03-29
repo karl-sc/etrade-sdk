@@ -60,7 +60,7 @@ except:
   print("Error retrieving alerts")
 ```
 
-# Other system dependancies
+# Other system dependencies
 This SDK makes heavy use of the following libraries:
 - xmltodict
 - rauth
