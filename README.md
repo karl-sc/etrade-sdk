@@ -3,8 +3,10 @@ Python SDK for Etrade REST API
 This SDK implements all REST API calls for the Etrade API listed here: https://apisb.etrade.com/docs/api/account/api-account-v1.html
 This class has been tested and is in use in my own personal python trading scripts.
 
+# Authentication Requirements
 In order to leverage this (and the REST API) you must have an API enabled Etrade account with both a 'consumer key' and a 'consumer secret'. When authenticating, the OAuth modules will attempt to authenticate and open a web browser window which you must follow to login. The SDK will then ask for a verification token. Simply paste this value back into the script to complete the interactive authentication.
 
+# Usage Examples
 ## Basic usage Demonstrating how to authenticate interactively and get a listing of accounts
 ```
 import etrade
@@ -36,7 +38,7 @@ except:
   print("Error getting last trade price. RAW DATA:")
   sdk.jd(stock_quote) ## JSON Dump output of response
   ```
-# Basic usage demonstrating how to iterate through all ALERTS on your account and print the ID and Detail
+## Basic usage demonstrating how to iterate through all ALERTS on your account and print the ID and Detail
 ```import etrade
 sdk = etrade.API()
 sdk.attributes['consumer_key'] = '....aaabbbccc.....'
